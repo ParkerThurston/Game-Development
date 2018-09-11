@@ -13,9 +13,9 @@ public class CharacterMove : MonoBehaviour {
 	public float groundCheckRadius;
 	public LayerMask whatIsGround;
 	private bool grounded;
-
+	private bool doubleJump;
 	//Non-Stick Player
-	//private float moveVelocity;
+	public float moveVelocity;
 
 	// Use this for initialization
 	void Start () {
@@ -34,19 +34,34 @@ public class CharacterMove : MonoBehaviour {
 	}	
 
 	//Double jump code
-	/*
+	
 	if (grounded)
-	dubleJump = false;
+	doubleJump = false;
 
-	if (Input.GetKeyDown(KeyCode.Space)&& !doubleJpum&& !grounded){
+	if (Input.GetKeyDown(KeyCode.Space)&& !doubleJump && !grounded){
 		Jump();
 		doubleJump = true;
 	}
-*/
 
+	if(Input.GetKey(KeyCode.D)){
+	MoveRight();
+	}
+	else if(Input.GetKey(KeyCode.A)){
+	MoveLeft();
+	}
+	else if(grounded && !Input.GetKey(KeyCode.A)|| grounded && !Input.GetKey(KeyCode.D)){
+		GetComponent<Rigidbody2D>().velocity = new Vector2(0,GetComponent<Rigidbody2D>().velocity.y);
+	}
+	
 	}
 	public void Jump(){
 	GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,JumpHeight);
     }
 
+	public void MoveLeft(){
+	GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed,GetComponent<Rigidbody2D>().velocity.y);
+    }
+	public void MoveRight(){
+	GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed,GetComponent<Rigidbody2D>().velocity.y);
+    }
 }
