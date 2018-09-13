@@ -124,7 +124,7 @@ GameObject:
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -330,8 +330,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 742604670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.51, y: 1.96, z: 0.6142989}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -8.622, y: -0.152, z: 0.6142989}
+  m_LocalScale: {x: 0.17503557, y: 0.17503557, z: 0.17503557}
   m_Children:
   - {fileID: 73669725}
   m_Father: {fileID: 0}
@@ -348,13 +348,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f5bf8a4b30a54741881996d60dece1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 10
-  JumpHeight: 10
+  MoveSpeed: 14
+  JumpHeight: 14
   groundCheck: {fileID: 73669725}
-  groundCheckRadius: 1
+  groundCheckRadius: 0.1
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
+  moveVelocity: 10
 --- !u!1 &1953466301
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +366,7 @@ GameObject:
   - component: {fileID: 1953466304}
   - component: {fileID: 1953466303}
   - component: {fileID: 1953466302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

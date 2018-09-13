@@ -49,11 +49,15 @@ public class CharacterMove : MonoBehaviour {
 	else if(Input.GetKey(KeyCode.A)){
 	MoveLeft();
 	}
-	else if(grounded && !Input.GetKey(KeyCode.A)|| grounded && !Input.GetKey(KeyCode.D)){
-		GetComponent<Rigidbody2D>().velocity = new Vector2(0,GetComponent<Rigidbody2D>().velocity.y);
+	else if(grounded && !Input.GetKey(KeyCode.A) || grounded && !Input.GetKey(KeyCode.D)){
+		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.5f,(GetComponent<Rigidbody2D>().velocity.y));
+	}
+	else if(!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D)){
+		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.04f,(GetComponent<Rigidbody2D>().velocity.y));
 	}
 	
 	}
+	
 	public void Jump(){
 	GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,JumpHeight);
     }
