@@ -42,30 +42,33 @@ public class CharacterMove : MonoBehaviour {
 		Jump();
 		doubleJump = true;
 	}
-
+	
+	//moveVelocity=0f;
+	//movement
 	if(Input.GetKey(KeyCode.D)){
-	MoveRight();
+		GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed,GetComponent<Rigidbody2D>().velocity.y);
+	//moveVelocity = MoveSpeed;
 	}
-	else if(Input.GetKey(KeyCode.A)){
-	MoveLeft();
-	}
+	if(Input.GetKey(KeyCode.A)){
+		GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed,GetComponent<Rigidbody2D>().velocity.y);
+	//moveVelocity=-MoveSpeed;
+
+	//GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity,GetComponent<Rigidbody2D>().velocity.y);
+
+	//Non SLide Player
+	
+	}//no slide
 	else if(grounded && !Input.GetKey(KeyCode.A) || grounded && !Input.GetKey(KeyCode.D)){
-		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.5f,(GetComponent<Rigidbody2D>().velocity.y));
+		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.3f,(GetComponent<Rigidbody2D>().velocity.y));
 	}
 	else if(!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D)){
-		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.04f,(GetComponent<Rigidbody2D>().velocity.y));
+		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.03f,(GetComponent<Rigidbody2D>().velocity.y));
 	}
-	
+	  
 	}
 	
 	public void Jump(){
 	GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,JumpHeight);
     }
-
-	public void MoveLeft(){
-	GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed,GetComponent<Rigidbody2D>().velocity.y);
-    }
-	public void MoveRight(){
-	GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed,GetComponent<Rigidbody2D>().velocity.y);
-    }
+	
 }
