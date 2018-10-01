@@ -12,7 +12,9 @@ public class CharacterMove : MonoBehaviour {
 	public Transform groundCheck;
 	public float groundCheckRadius;
 	public LayerMask whatIsGround;
+	public LayerMask whatIsIce;
 	private bool grounded;
+	private bool icegrounded;
 	private bool doubleJump;
 	//Non-Stick Player
 	public float moveVelocity;
@@ -24,18 +26,19 @@ public class CharacterMove : MonoBehaviour {
 	
 	void FixedUpdate () {
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+		icegrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsIce);
 	}
 	// Update is called once per frame
 	void Update () {
 
 	//This code makes the character jump
-	if(Input.GetKeyDown (KeyCode.Space) && grounded) {
+	if(Input.GetKeyDown (KeyCode.Space) && grounded||Input.GetKeyDown (KeyCode.Space) && icegrounded ){
 		Jump();
 	}	
 
 	//Double jump code
 	
-	if (grounded)
+	if (grounded||icegrounded)
 	doubleJump = false;
 
 	if (Input.GetKeyDown(KeyCode.Space)&& !doubleJump && !grounded){
@@ -62,7 +65,7 @@ public class CharacterMove : MonoBehaviour {
 		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.3f,(GetComponent<Rigidbody2D>().velocity.y));
 	}
 	else if(!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D)){
-		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.03f,(GetComponent<Rigidbody2D>().velocity.y));
+		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.01f,(GetComponent<Rigidbody2D>().velocity.y));
 	}
 	  
 	}
