@@ -58,8 +58,4 @@ public class LevelManager : MonoBehaviour {
 		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);
 
 	}
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
