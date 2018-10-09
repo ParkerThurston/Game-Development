@@ -5328,10 +5328,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 4
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 7
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5433,8 +5433,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f5bf8a4b30a54741881996d60dece1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 20
-  JumpHeight: 20
+  MoveSpeed: 30
+  JumpHeight: 30
   groundCheck: {fileID: 73669725}
   groundCheckRadius: 0.1
   whatIsGround:
@@ -5456,6 +5456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentCheckPoint: {fileID: 1317563886}
+  PC: {fileID: 742604671}
   DeathParticle: {fileID: 1517148312316540, guid: d73d92b77aaee4d6b9ae8918b18036b7,
     type: 2}
   RespawnParticle: {fileID: 1192710010159756, guid: 6a3f2bd306c6544cbaba216456fc638d,
@@ -11266,7 +11267,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 11.554192, y: -4.5305686}
+  m_Offset: {x: 9.209335, y: -80.59859}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11277,7 +11278,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 164.17723, y: 12.916585}
+  m_Size: {x: 260.8349, y: 165.05261}
   m_EdgeRadius: 0
 --- !u!4 &1624359870
 Transform:
