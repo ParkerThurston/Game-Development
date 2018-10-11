@@ -65,7 +65,7 @@ public class CharacterMove : MonoBehaviour {
 		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.3f,(GetComponent<Rigidbody2D>().velocity.y));
 	}
 	else if(!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D)){
-		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.01f,(GetComponent<Rigidbody2D>().velocity.y));
+		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.05f,(GetComponent<Rigidbody2D>().velocity.y));
 	}
 	  
 	}
