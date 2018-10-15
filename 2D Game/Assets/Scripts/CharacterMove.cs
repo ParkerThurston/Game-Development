@@ -55,23 +55,28 @@ public class CharacterMove : MonoBehaviour {
 	if(Input.GetKey(KeyCode.A)){
 		GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed,GetComponent<Rigidbody2D>().velocity.y);
 	//moveVelocity=-MoveSpeed;
-
+	}
 	//GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity,GetComponent<Rigidbody2D>().velocity.y);
 
-	//Non SLide Player
-	
-	}//no slide
-	else if(grounded && !Input.GetKey(KeyCode.A) || grounded && !Input.GetKey(KeyCode.D)){
+	//no slide
+	if(grounded && !Input.GetKey(KeyCode.A) || grounded && !Input.GetKey(KeyCode.D)){
 		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.3f,(GetComponent<Rigidbody2D>().velocity.y));
 	}
 	else if(!Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D)){
 		GetComponent<Rigidbody2D>().velocity = new Vector2((GetComponent<Rigidbody2D>().velocity.x)/1.05f,(GetComponent<Rigidbody2D>().velocity.y));
 	}
-	  
+	
+	//Player flip
+	if(GetComponent<Rigidbody2D>().velocity.x>0){
+		transform.localScale = new Vector3(0.2f,0.2f,1f);
+	}
+	else if(GetComponent<Rigidbody2D>().velocity.x<0){
+		transform.localScale = new Vector3(-0.2f,0.2f,1f);
+	}
 	}
 	
 	public void Jump(){
 	GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,JumpHeight);
-    }
+   }
 	
 }
