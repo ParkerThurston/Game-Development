@@ -5611,7 +5611,7 @@ GameObject:
   - component: {fileID: 742604675}
   - component: {fileID: 742604676}
   - component: {fileID: 742604677}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11273,8 +11273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 50
   PC: {fileID: 742604671}
-  EnemyDeath: {fileID: 1517148312316540, guid: d73d92b77aaee4d6b9ae8918b18036b7, type: 2}
-  ProjectileParticle: {fileID: 1192710010159756, guid: 6a3f2bd306c6544cbaba216456fc638d,
+  EnemyDeath: {fileID: 1876334558332922, guid: 520d2d95be6f1498e958137d6a31b459, type: 2}
+  ProjectileParticle: {fileID: 1087062158831912, guid: e65e73794f5bb4efdbc1293aa955ce73,
     type: 2}
   PointsForKill: 1000
 --- !u!50 &1555281074
@@ -11364,8 +11364,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1555281072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -60.383, y: 16.364, z: 0}
-  m_LocalScale: {x: 2.2277174, y: 0.9791862, z: 1.9363902}
+  m_LocalPosition: {x: -60.15, y: 16.3603, z: 0}
+  m_LocalScale: {x: 3.3394265, y: 0.79209596, z: 1.9363902}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
