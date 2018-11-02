@@ -5,6 +5,8 @@ using UnityEngine;
 public class CharacterMove : MonoBehaviour {
 
 	//Player Movement Variables
+	public float YScale;
+	public float XScale;
 	public int MoveSpeed = 10;
 	public float JumpHeight;
 
@@ -21,7 +23,8 @@ public class CharacterMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		XScale = transform.localScale.x;
+		YScale = transform.localScale.y;
 	}
 	
 	void FixedUpdate () {
@@ -68,10 +71,10 @@ public class CharacterMove : MonoBehaviour {
 	
 	//Player flip
 	if(GetComponent<Rigidbody2D>().velocity.x>0){
-		transform.localScale = new Vector3(0.2f,0.2f,1f);
+		transform.localScale = new Vector3(XScale,YScale,1f);
 	}
 	else if(GetComponent<Rigidbody2D>().velocity.x<0){
-		transform.localScale = new Vector3(-0.2f,0.2f,1f);
+		transform.localScale = new Vector3(-XScale,YScale,1f);
 	}
 	}
 	
