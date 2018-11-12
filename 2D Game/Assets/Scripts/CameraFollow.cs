@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour {
 
 	public CharacterMove Player;
 
-	public bool isFollowing;
+	public static bool isFollowing;
 
 	//Camera position offset
 	public float xOffset;
@@ -15,8 +15,8 @@ public class CameraFollow : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	Player = FindObjectOfType<CharacterMove>();
+	isFollowing=true;
 
-	isFollowing=true;	
 	}
 	
 	// Update is called once per frame

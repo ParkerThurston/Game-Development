@@ -55,6 +55,7 @@ public class LevelManager : MonoBehaviour {
 		//(Used to be)PC.enable = true;
 		PC.GetComponent<Renderer> ().enabled = true;
 		//Spawn Particle Effect
+		CameraFollow.isFollowing=true;
 		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);
 
 	}

@@ -12,6 +12,7 @@ public class KillPlayer : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.name == "PC"){
+			CameraFollow.isFollowing = false;
 			LevelManager.RespawnPlayer();
 		}
 	}
