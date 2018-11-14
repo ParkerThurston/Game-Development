@@ -5,14 +5,19 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 
 	public float Speed;
-	public Rigidbody2D PC;
+	public float TimeOut;
+	public GameObject PC;
 	public GameObject EnemyDeath;
 	public GameObject ProjectileParticle;
 	public int PointsForKill;
 	// Use this for initialization
 	void Start () {
+		PC=GameObject.Find("PC");
+		EnemyDeath = Resources.Load("Prefabs/Enemy Death") as GameObject;
+		ProjectileParticle = Resources.Load("Prefabs/Bullet Break") as GameObject;
 		if(PC.transform.localScale.x<0)
 		Speed = -Speed;
+		Destroy(gameObject,TimeOut);
 	}
 	
 	// Update is called once per frame
@@ -26,7 +31,11 @@ public class Projectile : MonoBehaviour {
 			ScoreManager.AddPoints(PointsForKill);
 		}
 
-		Instantiate(ProjectileParticle,transform.position, transform.rotation);
+		//Instantiate(ProjectileParticle,transform.position, transform.rotation);
 		Destroy(gameObject);
+	}
+	void OnCollisionEnter2D(Collision2D other){
+	Instantiate(ProjectileParticle,transform.position, transform.rotation);
+	Destroy (gameObject);
 	}
 }
