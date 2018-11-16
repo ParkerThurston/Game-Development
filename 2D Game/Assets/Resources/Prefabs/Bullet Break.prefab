@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4165639682886124}
   - component: {fileID: 198695092862883926}
   - component: {fileID: 199004130029173364}
+  - component: {fileID: 114284497846861456}
   m_Layer: 0
   m_Name: Bullet Break
   m_TagString: Untagged
@@ -41,6 +42,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.545, y: -90.00001, z: 90.00001}
+--- !u!114 &114284497846861456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1087062158831912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc9da87a472e441ca6cd8b060924a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198695092862883926
 ParticleSystem:
   m_ObjectHideFlags: 1
