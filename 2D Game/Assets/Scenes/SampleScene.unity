@@ -10903,16 +10903,6 @@ Transform:
   m_Father: {fileID: 983325923}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &742604670 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1012555163738022, guid: 803bc62f5e58d4c94bb42f323bd566ab,
-    type: 2}
-  m_PrefabInternal: {fileID: 290714629}
---- !u!50 &742604671 stripped
-Rigidbody2D:
-  m_PrefabParentObject: {fileID: 50301176647244730, guid: 803bc62f5e58d4c94bb42f323bd566ab,
-    type: 2}
-  m_PrefabInternal: {fileID: 290714629}
 --- !u!114 &742604675 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114999678649806716, guid: 803bc62f5e58d4c94bb42f323bd566ab,
@@ -24714,8 +24704,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentCheckPoint: {fileID: 1317563886}
-  PC: {fileID: 742604671}
-  PC2: {fileID: 742604670}
+  PC: {fileID: 0}
+  PC2: {fileID: 0}
   DeathParticle: {fileID: 1517148312316540, guid: d73d92b77aaee4d6b9ae8918b18036b7,
     type: 2}
   RespawnParticle: {fileID: 1192710010159756, guid: 6a3f2bd306c6544cbaba216456fc638d,
