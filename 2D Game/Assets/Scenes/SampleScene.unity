@@ -5479,7 +5479,8 @@ Prefab:
     - target: {fileID: 1005158239665232, guid: 803bc62f5e58d4c94bb42f323bd566ab, type: 2}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 4245832285328402, guid: 803bc62f5e58d4c94bb42f323bd566ab, type: 2}
       propertyPath: m_LocalPosition.y
       value: -0.06
@@ -5494,6 +5495,20 @@ Prefab:
       propertyPath: groundCheckRadius
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1770867407400436, guid: 803bc62f5e58d4c94bb42f323bd566ab, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 4303402929086378, guid: 803bc62f5e58d4c94bb42f323bd566ab, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.039
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999678649806716, guid: 803bc62f5e58d4c94bb42f323bd566ab,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2113997877}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 803bc62f5e58d4c94bb42f323bd566ab, type: 2}
   m_IsPrefabParent: 0

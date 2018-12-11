@@ -20,9 +20,12 @@ public class CharacterMove : MonoBehaviour {
 	private bool doubleJump;
 	//Non-Stick Player
 	public float moveVelocity;
+	public Animator animator;
 
 	// Use this for initialization
 	void Start () {
+		animator.SetBool("isWalking",false);
+		animator.SetBool("isJumping",false);
 		XScale = transform.localScale.x;
 		YScale = transform.localScale.y;
 	}
@@ -36,14 +39,16 @@ public class CharacterMove : MonoBehaviour {
 
 	//This code makes the character jump
 	if(Input.GetKeyDown (KeyCode.Space) && grounded||Input.GetKeyDown (KeyCode.Space) && icegrounded ){
-		Jump();
+		Jump();	
 	}	
 
 	//Double jump code
 	
-	if (grounded||icegrounded)
+	if (grounded||icegrounded){
 	doubleJump = false;
-
+	animator.SetBool("isJumping",false);
+	}
+	
 	if (Input.GetKeyDown(KeyCode.Space)&& !doubleJump && !grounded){
 		Jump();
 		doubleJump = true;
@@ -53,11 +58,19 @@ public class CharacterMove : MonoBehaviour {
 	//movement
 	if(Input.GetKey(KeyCode.D)){
 		GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed,GetComponent<Rigidbody2D>().velocity.y);
+		animator.SetBool("isWalking",true);
 	//moveVelocity = MoveSpeed;
+	}
+	else if (Input.GetKeyUp(KeyCode.D)){
+	animator.SetBool("isWalking",false);
 	}
 	if(Input.GetKey(KeyCode.A)){
 		GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed,GetComponent<Rigidbody2D>().velocity.y);
+		animator.SetBool("isWalking",true);
 	//moveVelocity=-MoveSpeed;
+	}
+	else if (Input.GetKeyUp(KeyCode.A)){
+	animator.SetBool("isWalking",false);
 	}
 	//GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity,GetComponent<Rigidbody2D>().velocity.y);
 
@@ -80,6 +93,7 @@ public class CharacterMove : MonoBehaviour {
 	
 	public void Jump(){
 	GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,JumpHeight);
+	animator.SetBool("isJumping",true);
    }
 	
 }
