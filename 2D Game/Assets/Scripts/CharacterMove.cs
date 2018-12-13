@@ -41,7 +41,8 @@ public class CharacterMove : MonoBehaviour {
 	if(Input.GetKeyDown (KeyCode.Space) && grounded||Input.GetKeyDown (KeyCode.Space) && icegrounded ){
 		Jump();	
 	}	
-
+	if(!grounded || !icegrounded)
+	animator.SetBool("isJumping",true);
 	//Double jump code
 	
 	if (grounded||icegrounded){
