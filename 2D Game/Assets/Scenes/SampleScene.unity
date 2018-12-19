@@ -5497,8 +5497,7 @@ Prefab:
     - target: {fileID: 1770867407400436, guid: 803bc62f5e58d4c94bb42f323bd566ab, type: 2}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000,
-        type: 0}
+      objectReference: {fileID: 0}
     - target: {fileID: 4303402929086378, guid: 803bc62f5e58d4c94bb42f323bd566ab, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.039
